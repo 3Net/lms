@@ -101,6 +101,16 @@ $LANGDEFS = array(
 			'money_format' => '%01.2f Kč',
 //			'mobile' => '(88[08]|50[0-9]|6[09][0-9])[0-9]{6}',
 			),
+		  'lv' => array(
+                        'name' => 'Latvian',
+                        'orig' => 'Latviski',
+                        'locale' => 'lv_LV.UTF-8',
+                        'charset' => 'UTF-8',
+                        'html' => 'lv',
+                        'money_format' => '%01.2f EUR',
+//                      'mobile' => '(88[08]|50[0-9]|6[09][0-9])[0-9]{6}',
+                        ),
+
 		);
 
 // UI language
@@ -124,6 +134,7 @@ foreach ($langs as $val)
 		case 'ro':
 		case 'en':
 		case 'cz':
+		case 'lv':
 			$_ui_language = $val;
 			break 2;
 	}
