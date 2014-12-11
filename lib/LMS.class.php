@@ -637,9 +637,9 @@ class LMS {
 				    creatorid, info, notes, message, pin, regon, rbe,
 				    icn, cutoffstop, consentdate, einvoice, divisionid, paytime, paytype,
 				    invoicenotice, mailingnotice,
-				    invoice_name, invoice_address, invoice_zip, invoice_city, invoice_countryid, invoice_ten,origin)
+				    invoice_name, invoice_address, invoice_zip, invoice_city, invoice_countryid, invoice_ten, invoice_account, origin)
 				    VALUES (?, UPPER(?), ?, ?, ?, ?, ?, ?, ?, ?, ?, ?NOW?,
-				    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', array(lms_ucwords($customeradd['name']),
+				    ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)', array(lms_ucwords($customeradd['name']),
 						$customeradd['lastname'],
 						empty($customeradd['type']) ? 0 : 1,
 						$customeradd['address'],
@@ -677,6 +677,7 @@ class LMS {
 						$customeradd['invoice_city'],
 						$customeradd['invoice_countryid'],
 						$customeradd['invoice_ten'],
+						$customeradd['invoice_account'],
 						($customeradd['origin'] ? $customeradd['origin'] : 0),
 				))
 		) {
@@ -754,8 +755,8 @@ class LMS {
 				deleted=0, message=?, pin=?, regon=?, icn=?, rbe=?,
 				cutoffstop=?, consentdate=?, einvoice=?, invoicenotice=?, mailingnotice=?,
 				divisionid=?, paytime=?, paytype=?,
-				invoice_name=?, invoice_address=?, invoice_zip=?, invoice_city=?, invoice_countryid=?, invoice_ten=?,
-				origin = ?
+				invoice_name=?, invoice_address=?, invoice_zip=?, invoice_city=?, invoice_countryid=?, invoice_ten=?, 
+				invoice_account-?, origin = ?
 				WHERE id=?', array($customerdata['status'],
 				empty($customerdata['type']) ? 0 : 1,
 				$customerdata['address'],
@@ -794,7 +795,8 @@ class LMS {
 				$customerdata['invoice_city'],
 				$customerdata['invoice_countryid'],
 				$customerdata['invoice_ten'],
-				($customerdata['origin'] ? $customerdata['origin'] : 0),
+				$customerdata['invoice_account'],
+                ($customerdata['origin'] ? $customerdata['origin'] : 0),
 				$customerdata['id'],
 				));
 
