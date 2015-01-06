@@ -41,7 +41,38 @@
 			{$customerinfo.address}<br>
 			{$customerinfo.zip} {$customerinfo.city}
 		</td>
-	</tr>
+
+       </tr>
+
+{if $customerinfo.invoice_name neq "" || $customerinfo.invoice_address neq ""}
+        <tr class="light">
+                <td width="1%" style="vertical-align:top;">
+                        <img src="img/home.gif" alt="">
+                </td>
+                <td width="99%" nowrap>
+                    <fieldset style="width:50%">
+                    <legend><b>{trans ("Billing/Legal adress VAT / Proforma")}</b></legend>
+                        {if $customerinfo.invoice_name neq ""}{$customerinfo.invoice_name}{/if}
+                        {if $customerinfo.invoice_address neq ""}<br>{$customerinfo.invoice_address}{/if}
+                        <br>{$customerinfo.invoice_zip} {$customerinfo.invoice_city}
+                        {if $customerinfo.invoice_cstate}<br>{$customerinfo.invoice_cstate}{/if}
+                        {if $customerinfo.invoice_country}<br>{t}{$customerinfo.invoice_country}{/t}{/if}
+                        {if $customerinfo.invoice_ten}<br>{$customerinfo.invoice_ten}{/if}
+                        {if $customerinfo.invoice_account}<br>{$customerinfo.invoice_account}{/if}
+                    </fieldset>
+                </td>
+        </tr>
+{/if}
+
+
+
+
+
+
+
+
+
+
 {if $customerinfo.post_name neq "" || $customerinfo.post_address neq ""}
 	<tr>
 		<td width="1%" >
@@ -113,7 +144,7 @@
 	</tr>
 {/if}
 {if $customerinfo.ssn neq ""}
-	<tr">
+	<tr>
 		<td width="1%">
 			<img src="img/serialnumber.gif" alt="">
 		</td>
