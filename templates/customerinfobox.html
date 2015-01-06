@@ -60,7 +60,7 @@
 		</td>
 		<td width="99%">
 		    <fieldset style="width:50%">
-		    <legend><b> Adres siedziby, zameldowania</b></legend>
+		    <legend><b>{trans("Connection Address")}</b></legend>
 			{$customerinfo.address}<br>
 			{$customerinfo.zip} {$customerinfo.city}
 			{if $customerinfo.cstate}<br>{$customerinfo.cstate}{/if}
@@ -75,7 +75,7 @@
 		</td>
 		<td width="99%" nowrap>
 		    <fieldset style="width:50%">
-		    <legend><b> Odbiorca faktury </b></legend>
+		    <legend><b>{trans ("Billing/Legal adress VAT / Proforma")}</b></legend>
 			{if $customerinfo.invoice_name neq ""}{$customerinfo.invoice_name}{/if}
 			{if $customerinfo.invoice_address neq ""}<br>{$customerinfo.invoice_address}{/if}
 			<br>{$customerinfo.invoice_zip} {$customerinfo.invoice_city}
@@ -94,7 +94,7 @@
 		</td>
 		<td width="99%" nowrap>
 		    <fieldset style="width:50%">
-		    <legend><b> Adres do wysyłki</b></legend>
+		    <legend><b>{trans ("Postal Adress")}</b></legend>
 			{if $customerinfo.post_name neq ""}{$customerinfo.post_name}{/if}
 			{if $customerinfo.post_address neq ""}<br>{$customerinfo.post_address}{/if}
 			<br>{$customerinfo.post_zip} {$customerinfo.post_city}
