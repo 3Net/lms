@@ -2637,7 +2637,7 @@ $_LANG['Unable to write to SMSTools outgoing directory ($a)!'] = 'Unable to writ
 $_LANG['uncompressed'] = 'uncompressed';
 $_LANG['undefined'] = 'undefined';
 $_LANG['Unicast reply from $a [$b]: time=$c'] = 'Unicast reply from $a [$b]: time=$c';
-$_LANG['Unit:'] = 'Unit:';
+$_LANG['Unit:'] = 'Vieniba:';
 $_LANG['Unitary Net Value:'] = 'Unitary Net Value:';
 $_LANG['unknown'] = 'unknown';
 $_LANG['- unknown -'] = '- unknown -';

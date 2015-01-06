@@ -60,12 +60,12 @@
 		</td>
 		<td width="99%">
 		    <fieldset style="width:50%">
-		    <legend><b> Adres siedziby, zameldowania</b></legend>
+		    <legend><b>{trans("Connection Address")}</b></legend>
 			{$customerinfo.address}<br>
 			{$customerinfo.zip} {$customerinfo.city}
 			{if $customerinfo.cstate}<br>{$customerinfo.cstate}{/if}
 			{if $customerinfo.country}<br>{t}{$customerinfo.country}{/t}{/if}
-		    </lieldset>
+		    </fieldset>
 		</td>
 	</tr>
 {if $customerinfo.invoice_name neq "" || $customerinfo.invoice_address neq ""}
@@ -75,13 +75,14 @@
 		</td>
 		<td width="99%" nowrap>
 		    <fieldset style="width:50%">
-		    <legend><b> Odbiorca faktury </b></legend>
+		    <legend><b>{trans ("Billing/Legal adress VAT / Proforma")}</b></legend>
 			{if $customerinfo.invoice_name neq ""}{$customerinfo.invoice_name}{/if}
 			{if $customerinfo.invoice_address neq ""}<br>{$customerinfo.invoice_address}{/if}
 			<br>{$customerinfo.invoice_zip} {$customerinfo.invoice_city}
 			{if $customerinfo.invoice_cstate}<br>{$customerinfo.invoice_cstate}{/if}
 			{if $customerinfo.invoice_country}<br>{t}{$customerinfo.invoice_country}{/t}{/if}
 			{if $customerinfo.invoice_ten}<br>{$customerinfo.invoice_ten}{/if}
+			{if $customerinfo.invoice_account}<br>{$customerinfo.invoice_account}{/if}
 		    </fieldset>
 		</td>
 	</tr>
@@ -94,7 +95,7 @@
 		</td>
 		<td width="99%" nowrap>
 		    <fieldset style="width:50%">
-		    <legend><b> Adres do wysyłki</b></legend>
+		    <legend><b>{trans ("Postal Adress")}</b></legend>
 			{if $customerinfo.post_name neq ""}{$customerinfo.post_name}{/if}
 			{if $customerinfo.post_address neq ""}<br>{$customerinfo.post_address}{/if}
 			<br>{$customerinfo.post_zip} {$customerinfo.post_city}
@@ -212,16 +213,16 @@
 		</td>
 	</tr>
 {/if}
-{if $customerinfo.bankaccount}
-	<tr class="light">
-		<td width="1%">
-			<img src="img/card.gif" alt="">
-		</td>
-		<td width="99%" nowrap>
-			{format_bankaccount($customerinfo.bankaccount)}
-		</td>
-	</tr>
-{/if}
+<!--  {if $customerinfo.bankaccount}
+//	<tr class="light">
+//		<td width="1%">
+//			<img src="img/card.gif" alt="">
+//		</td>
+//		<td width="99%" nowrap>
+//			{trans("Bankaccount")}: {$customerinfo.bankaccount}
+//		</td>
+//	</tr>
+{/if} -->
 	<tr class="light">
 		<td width="1%" style="vertical-align: top">
 			<img src="img/options.gif" alt="">
