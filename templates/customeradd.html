@@ -127,7 +127,7 @@
 					</td>
 					<td width="99%" nowrap>
 					    <fieldset style="width:240px;">
-					    <legend><b> Adres siedziby, zameldowania</b></legend>
+					    <legend><b> {trans("Connection Address")}</b></legend>
 						<table width="100%" cellpadding="1">
 						    <tr>
 							<td width="1%" nowrap>{trans("Address:")}</td>
@@ -186,7 +186,7 @@
 					</td>
 					<td width="99%" nowrap>
 					    <fieldset style="width:240px;">
-					    <legend><img src="img/help.png" width="16" {tip text="Odbiorca faktury VAT lub proformy, jeżeli jest inny niż główny adresat"}><b> Odbiorca faktury VAT / Proforma </b></legend>
+					    <legend><img src="img/help.png" width="16" {tip text="Billing or legal adress"}><b> {trans ("Billing/Legal adress VAT / Proforma")}</b></legend>
 						<table width="100%" cellpadding="1">
 						    <tr>
 							<td width="1%" nowrap>{trans("Name:")}</td>
@@ -217,6 +217,13 @@
 							{/if}
 					            </td>
 				        	    </tr>
+							<tr>
+							<td width="1%" nowrap>{trans("Customer Bank Account:")}</td>
+							<td width="99%"><input type="text" size="30" value="{$customeradd.invoice_account}" name="customeradd[invoice_account]" id="invoice_account" {tip text="Enter IBAN number" trigger="invoice_account"}></td>
+						    </tr>
+						    <tr>
+								
+								
 						{if $cstateslist}
 						    <tr>
 							<td width="1%" nowrap>{trans("State:")}</td>
@@ -259,7 +266,7 @@
 					</td>
 					<td width="99%" nowrap>
 						<fieldset style="width:240px">
-						<legend><img src="img/help.png" width="16" {tip text="Adresy wysyłki jeżeli jest inny niż adres odbiorcy faktury lub adres siedziby"}><b> Adres do wysyłki </b></legend>
+						<legend><img src="img/help.png" width="16" {tip text="Postal Address"}><b>{trans ("Postal Adress")} </b></legend>
 						<table width="100%" cellpadding="1">
 						    <tr>
 							<td width="1%" nowrap>{trans("Name:")}</td>
