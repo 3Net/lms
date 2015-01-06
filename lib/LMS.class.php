@@ -756,7 +756,7 @@ class LMS {
 				cutoffstop=?, consentdate=?, einvoice=?, invoicenotice=?, mailingnotice=?,
 				divisionid=?, paytime=?, paytype=?,
 				invoice_name=?, invoice_address=?, invoice_zip=?, invoice_city=?, invoice_countryid=?, invoice_ten=?, 
-				invoice_account-?, origin = ?
+				invoice_account=?, origin = ?
 				WHERE id=?', array($customerdata['status'],
 				empty($customerdata['type']) ? 0 : 1,
 				$customerdata['address'],
