@@ -54,6 +54,8 @@
 			    {$invoice.invoice_address}<br>
 			    {$invoice.invoice_zip} {$invoice.invoice_city}<br>
 			    {if $invoice.invoice_ten neq ""}{trans("TEN:")} {$invoice.invoice_ten}<br>{/if}
+			{if $invoice.invoice_account neq ""}{trans("Bankaccount:")} {$invoice.invoice_account}<br>{/if}
+			
 			{else}
 			    {$invoice.name}<br>
 			    {$invoice.address}<br>

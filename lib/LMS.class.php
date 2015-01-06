@@ -735,7 +735,6 @@ class LMS {
 		// Remove Userpanel rights
 		if (!empty($this->CONFIG['directories']['userpanel_dir']))
 			$this->DB->Execute('DELETE FROM up_rights_assignments WHERE customerid=?', array($id));
-
 		$this->DB->CommitTrans();
 	}
 
@@ -837,7 +836,7 @@ class LMS {
 		if ($result = $this->DB->GetRow('SELECT c.*, '
 				. $this->DB->Concat('UPPER(c.lastname)', "' '", 'c.name') . ' AS customername,
 			(SELECT co.name FROM customerorigin co WHERE co.id = c.origin) AS originname, 
-			d.shortname AS division, d.account
+			d.shortname AS division, d.account, c.invoice_account 
 			FROM customers' . (defined('LMS-UI') ? 'view' : '') . ' c 
 			LEFT JOIN divisions d ON (d.id = c.divisionid)
 			WHERE c.id = ?', array($id))) {
