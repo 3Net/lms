@@ -79,11 +79,11 @@ function to_words($num, $power = 0, $powsuffix = '', $short_version = 0)
 	$_digits = array(0 => 'nulle', 'viens', 'divi', 'trīs', 'četri', 'pieci', 'seši', 'septiņi', 'astoņi', 'deviņi');
 	$_exponent = array(
 		0 => array(''),
-		3 => array('tūkstantis','tūkstančiai','tūkstančių'),
-		6 => array('milijonas','milijonai','milijonų'),
-		9 => array('bilijonas','bilijonai','bilijonų'),
-		12 => array('trilijonas','trilijonai','trilijonų'),
-		15 => array('kvadrilijonas','kvadrilijonai','kvadrilijonų'),
+		3 => array('tūkstotis','tūkstošu','tūkstošu'),
+		6 => array('miljons','milijonu','miljonu'),
+		9 => array('miljards','miljardu','miljardu'),
+		12 => array('triljons','triljonu','triljonų'),
+		15 => array('kvadriljons','kvadrilijonai','kvadrilijonų'),
 		18 => array('kvintilijonas','kvintilijonai','kvintilijonų')
 		);
 
@@ -139,9 +139,9 @@ function to_words($num, $power = 0, $powsuffix = '', $short_version = 0)
 	}
 
 	if ($h > 1)
-		$ret .= $_sep . $_digits[$h] . $_sep . 'šimtai';
+		$ret .= $_sep . $_digits[$h] . $_sep . 'simts';
 	elseif ($h)
-		$ret .= $_sep . 'šimtas';
+		$ret .= $_sep . 'simti';
 
 	// ten, twenty etc.
 	switch ($t) {
@@ -149,57 +149,57 @@ function to_words($num, $power = 0, $powsuffix = '', $short_version = 0)
 			$ret .= $_sep . 'deviņdesmit';
 			break;
 		case 8:
-			$ret .= $_sep . 'aštuoniasdešimt';
+			$ret .= $_sep . 'astoņdesmit';
 			break;
 		case 7:
-			$ret .= $_sep . 'septyniasdešimt';
+			$ret .= $_sep . 'septiņdesmit';
 			break;
 		case 6:
-			$ret .= $_sep . 'šešiasdešimt';
+			$ret .= $_sep . 'sešdesmit';
 			break;
 		case 5:
-			$ret .= $_sep . 'penkiasdešimt';
+			$ret .= $_sep . 'piecdesmit';
 			break;
 		case 4:
-			$ret .= $_sep . 'keturiasdešimt';
+			$ret .= $_sep . 'četrdesmit';
 			break;
 		case 3:
-			$ret .= $_sep . 'trisdešimt';
+			$ret .= $_sep . 'trīsdesmit';
 			break;
 		case 2:
-			$ret .= $_sep . 'dvidešimt';
+			$ret .= $_sep . 'divdesmit';
 			break;
 		case 1:
 			switch ($d) {
 				case 0:
-					$ret .= $_sep . 'dešimt';
+					$ret .= $_sep . 'desmit';
 					break;
 				case 1:
-					$ret .= $_sep . 'vienuolika';
+					$ret .= $_sep . 'viens';
 					break;
 				case 2:
-					$ret .= $_sep . 'dvylika';
+					$ret .= $_sep . 'divi';
 					break;
 				case 3:
-					$ret .= $_sep . 'trylika';
+					$ret .= $_sep . 'trīs';
 					break;
 				case 4:
-					$ret .= $_sep . 'keturiolika';
+					$ret .= $_sep . 'četri';
 					break;
 				case 5:
-					$ret .= $_sep . 'penkiolika';
+					$ret .= $_sep . 'pieci';
 					break;
 				case 6:
-					$ret .= $_sep . 'šešiolika';
+					$ret .= $_sep . 'seši';
 					break;
 				case 7:
-					$ret .= $_sep . 'septyniolika';
+					$ret .= $_sep . 'septiņi';
 					break;
 				case 8:
-					$ret .= $_sep . 'aštuoniolika';
+					$ret .= $_sep . 'astoņi';
 					break;
 				case 9:
-					$ret .= $_sep . 'devyniolika';
+					$ret .= $_sep . 'deviņi';
 					break;
 			}
 			break; 
